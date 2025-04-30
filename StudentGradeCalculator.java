@@ -52,15 +52,15 @@ public class StudentGradeCalculator {
                 continue;
             }
             
-            // Split the line into name and grade
+            // basta mo split ang line into name and grade
             String[] parts = line.split("\\s+");
             
-            // Skip lines that don't have at least two parts or if the first part is "Average"
+            // mo skip alines ni na dont have at least two parts or if ang first part kay kanang Average
             if (parts.length < 2 || parts[0].equals("Average")) {
                 continue;
             }
             
-            // Extract the grade (last part)
+            // extract ang grado sa (last part)
             try {
                 double grade = Double.parseDouble(parts[parts.length - 1]);
                 sum += grade;
