@@ -1,20 +1,20 @@
 public class StudentGradeCalculator {
 
-// NOTE THAT DAPAT IBUTANG NIMO NI SA VSCODE PARA MOGANA AND NAANAPOD EXPLANATION DIHA
+// Naanani sa vscode sir hehe
     
     public static void main(String[] args) {
         try {
             String fileName = "grades.txt";
             java.io.File file = new java.io.File(fileName);
             
-            // Check if the file exists
+            // Basta diri napart Mo check if ang file mag exists
             if (!file.exists()) {
                 System.out.println("File '" + fileName + "' not found. Creating sample file...");
                 createSampleFile(fileName);
                 System.out.println("Sample file created successfully!");
             }
             
-            // Calculate and print grades
+            // Diri mag calculate ang grado ug mu print chu chu
             double averageGrade = calculateAverageGrade(fileName);
             System.out.println("\nStudent Grades:");
             printStudentGrades(fileName);
@@ -27,7 +27,7 @@ public class StudentGradeCalculator {
     }
     
     /**
-     * Creates a sample grades.txt file with test data
+     * Maoni mo buhat ug katong grade.txt sir
      */
     public static void createSampleFile(String fileName) throws java.io.IOException {
         java.io.PrintWriter writer = new java.io.PrintWriter(new java.io.FileWriter(fileName));
@@ -38,7 +38,7 @@ public class StudentGradeCalculator {
     }
     
     /**
-     * Calculates the average grade for the class
+     * mo calculate ni ug average grade
      */
     public static double calculateAverageGrade(String fileName) throws java.io.IOException {
         java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader(fileName));
@@ -47,7 +47,7 @@ public class StudentGradeCalculator {
         int count = 0;
         
         while ((line = reader.readLine()) != null) {
-            // Skip empty lines
+            // Skip ni ug empty lines
             if (line.trim().isEmpty()) {
                 continue;
             }
@@ -88,20 +88,19 @@ public class StudentGradeCalculator {
         String line;
         
         while ((line = reader.readLine()) != null) {
-            // Skip empty lines
             if (line.trim().isEmpty()) {
                 continue;
             }
             
-            // Split the line into parts (name and grade)
+            // tungaon ang line into parts (name and grade) basta kana
             String[] parts = line.split("\\s+");
             
-            // Skip lines that don't have at least two parts or if the first part is "Average"
+            // mo skip alines ni na dont have at least two parts or if ang first part kay kanang Average
             if (parts.length < 2 || parts[0].equals("Average")) {
                 continue;
             }
             
-            // Extract the name (all parts except the last one)
+            // Diri na mo extract ug names (all parts except sa last)
             StringBuilder name = new StringBuilder();
             for (int i = 0; i < parts.length - 1; i++) {
                 name.append(parts[i]);
@@ -110,10 +109,10 @@ public class StudentGradeCalculator {
                 }
             }
             
-            // Extract the grade (last part)
+            // para mo extract po ug grado (last part)
             String grade = parts[parts.length - 1];
             
-            // Print the student's name and grade
+            // Now diri na mo print and student name ug ang iyahang grado po
             System.out.println(name + ": " + grade);
         }
         
